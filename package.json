@@ -1,0 +1,49 @@
+{
+  "name": "@bonnard/sdk",
+  "version": "0.4.1",
+  "description": "Bonnard SDK - query your semantic layer from any JavaScript or TypeScript app",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./browser": {
+      "default": "./dist/bonnard.iife.js"
+    }
+  },
+  "unpkg": "dist/bonnard.iife.js",
+  "jsdelivr": "dist/bonnard.iife.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && esbuild src/browser.ts --bundle --format=iife --global-name=Bonnard --outfile=dist/bonnard.iife.js --minify --sourcemap --target=es2020",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "bonnard",
+    "semantic-layer",
+    "analytics",
+    "mcp",
+    "cube",
+    "dashboard",
+    "metrics",
+    "ai"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meal-inc/bonnard-sdk.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
